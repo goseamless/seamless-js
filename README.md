@@ -8,16 +8,16 @@ seamless.js is the mobile web/app display advertising script of seamless. The sc
 
 ## Table Of Contents
 * [Integration Steps](#integration)
-    * [Insert ad places into your HTML document](#ad-places)
-    * [Define ad properties and options](#ad-definitions)
-    * [Copy and paste seamless.js initializer](#initialize)
+    * [1. Insert ad places into your HTML document](#ad-places)
+    * [2. Define ad properties and options](#ad-definitions)
+    * [3. Copy and paste seamless.js initializer](#initialize)
 * [Configuration](#configuration)
 * [Custom Initialization](#custom-initialization)
 
 
 ## Integration Steps
 
-### Insert ad places into your HTML document
+### 1. Insert ad places into your HTML document
 
 Ad places are empty div nodes with unique id's. seamless.js will inject ads into these places whenever an ad is available for the place. Insert these div nodes in suiting parts of your HTML document.
 Say you want to have a banner ad at footer section of your page, place a div node into your footer node and set a unique id for the div. Or you want to have an interstitial ad on your page, simply add another div node right after opening of the body tag (`<body>`), again with a unique id.
@@ -27,7 +27,7 @@ Say you want to have a banner ad at footer section of your page, place a div nod
     <div id="seamless-mre"></div>
 ```
 
-### Define ad properties and options
+### 2. Define ad properties and options
 
 Now that you have empty ad places in your documents, seamless.js needs to know what to inject into those places.
 Ad properties and options are defined in the window.seamlessAds global variable. The value for this variable is an array of objects and each object in the array has the definition for a single ad place.
@@ -65,7 +65,7 @@ As you see there are predefined properties for each ad definition.
 - **reload** => information about whether this ad place should refresh itself in predefined periods. default value is true.
 
 
-### Copy and paste seamless.js initializer
+### 3. Copy and paste seamless.js initializer
 
 You have now ad places and ad definitions set in your document. Last step is to place the script tag to initialise seamless.js.
 You can simply copy and paste the following tag into your document, again right before the closing of body tag (`</body>`). 
