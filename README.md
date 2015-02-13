@@ -7,26 +7,19 @@ seamless.js is the mobile web/app display advertising script of seamless. The sc
 
 
 ## Table Of Contents
-* [How to use](#how-to-use)
-* [Documentation](#documentation)
+* [Integration Steps](#integration)
+    * [Insert ad places into your HTML document](#ad-places)
+    * [Define ad properties and options](#ad-definitions)
+    * [Copy and paste seamless.js initializer](#initialize)
+* [Custom Integration](#custom-integration)
 
 
-
-## How to use
-
-* [Define Advertisements & Options](#define-advertisements-and-options)
-* [Copy and Paste The Initializer](#copy-initialize)
-* [Important Notes](#important-notes)
-
-
-
-How To Use
-----------------------------------
+## Integration Steps
 
 ### Insert ad places into your HTML document
 
 Ad places are empty div nodes with unique id's. seamless.js will inject ads into these places whenever an ad is available for the place. Insert these div nodes in suiting parts of your HTML document.
-Say you want to have a banner ad at footer section of your page, place a div node into your footer node and set a unique id for the div. Or you want to have an interstitial ad on your page, simply add another div node right after opening of the body tag (<body>), again with a unique id.
+Say you want to have a banner ad at footer section of your page, place a div node into your footer node and set a unique id for the div. Or you want to have an interstitial ad on your page, simply add another div node right after opening of the body tag (`<body>`), again with a unique id.
 
 ```
     <div id="seamless-banner"></div>
@@ -38,7 +31,7 @@ Say you want to have a banner ad at footer section of your page, place a div nod
 Now that you have empty ad places in your documents, seamless.js needs to know what to inject into those places.
 Ad properties and options are defined in the window.seamlessAds global variable. The value for this variable is an array of objects and each object in the array has the definition for a single ad place.
 If you have two ad places on your page, one with unique id seamless-banner to display standard banners ads (size 320x50) and the other with unique id seamless-mre to display medium rectangle banner ads (size 300x250), here is how you set the window.seamlessAds variable.
-Set this variable in a script tag right before the closing of the body tag (</body>).
+Set this variable in a script tag right before the closing of the body tag (`</body>`).
 
 ```
 <script type="text/javascript">
@@ -64,7 +57,7 @@ Set this variable in a script tag right before the closing of the body tag (</bo
 As you see there are predefined properties for each ad definition. 
 
 - **adUnitId** => a unique hash specific both to your web site/app and ad place. This id will be delivered to you by seamless ad operations team.
-- **nodeId** => the unique id of your ad place <div> object which this ad definition belongs. seamless.js will inject the ad into this div node.
+- **nodeId** => the unique id of your ad place `<div>` object which this ad definition belongs. seamless.js will inject the ad into this div node.
 - **adWidth** => width of the ad you want to display.
 - **adHeight** => width of the ad you want to display.
 - **keywords** => keywords are used for targeted ad delivery. it's optional and can be set to an empty string.
@@ -74,7 +67,7 @@ As you see there are predefined properties for each ad definition.
 ### Copy and paste seamless.js initializer
 
 You have now ad places and ad definitions set in your document. Last step is to place the script tag to initialise seamless.js.
-You can simply copy and paste the following tag into your document, again right before the closing of body tag (</body>). 
+You can simply copy and paste the following tag into your document, again right before the closing of body tag (`</body>`). 
 
 ```
 <script type="text/javascript">
@@ -175,7 +168,7 @@ seamlessMW.initAd method needs a single argument, an object for ad definition wh
 Google DFP
 ----------------------------------
 
-To enable DFP support on your mobile web site/app, you also need to place the following script tag before closing of the head tag (</head>) in your document.
+To enable DFP support on your mobile web site/app, you also need to place the following script tag before closing of the head tag (`</head>`) in your document.
 seamless ad operations team will inform you if and when you need to have the following tag in your page.
 
 ```
