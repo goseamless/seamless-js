@@ -213,3 +213,28 @@ seamless ad operations team will inform you if and when you need to have the fol
 ```
 
 ### Criteo Retargeting
+
+To enable Criteo Retargeting Ads support on your mobile web site/app, first you need to provide ad definition objects with keywords set to Criteo variable. Suppose you want to enable Criteo ads for both your banner and medium rectangle ad places (following the example in integration steps section), you should have the following `window.seamlessAds` variable in your document. Notice that the only difference is the value of keywords property.
+
+```
+<script type="text/javascript">
+    window.seamlessAds = [{
+        adUnitId: 'AD_UNIT_ID',
+        nodeId: 'seamless-banner',
+        adWidth: 320,
+        adHeight: 50,
+        keywords: (typeof crtg_content != "undefined" && crtg_content ? crtg_content : ""),
+        reload: true
+    },
+    {
+        adUnitId: 'AD_UNIT_ID',
+        nodeId: 'seamless-mre',
+        adWidth: 300,
+        adHeight: 250,
+        keywords: (typeof crtg_content != "undefined" && crtg_content ? crtg_content : ""),
+        reload: true
+    }];
+</script>
+```
+
+As a second step you need the have Criteo tag inserted into the `head` tag of your document. seamless ad operations team will inform you if and when you need to have Criteo implementation in your page and provide the Criteo tag.
