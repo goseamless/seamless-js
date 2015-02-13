@@ -128,8 +128,7 @@ That's it. Here is how the end part of your HTML document should look after foll
 
 There's another global variable which you can set to configure seamless.js. You may to configure seamless.js explicitly, in this case place the following script tag before the initializr tag.
 
-
-seamlessJS automatically initializes the defined advertisements into <div> objects that you want to insert in. However you can also define a config object to disable automatic initialization:
+seamlessJS automatically initializes the defined advertisements into `<div>` nodes that you want to insert in. However you can also define a config object to disable automatic initialization:
 
 ```
 <script type="text/javascript">
