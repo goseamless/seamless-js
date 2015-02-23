@@ -20,11 +20,19 @@ seamless.js is the mobile web/app display advertising script of seamless. The sc
 ### 1. Insert ad places into your HTML document
 
 Ad places are empty div nodes with unique id's. seamless.js will inject ads into these places whenever an ad is available for the place. Insert these div nodes in suiting parts of your HTML document.
-Say you want to have a banner ad at footer section of your page, place a div node into your footer node and set a unique id for the div. Or you want to have an interstitial ad on your page, simply add another div node right after opening of the body tag (`<body>`), again with a unique id.
+Say you want to have a banner ad at footer section of your page, place a div node into your footer node and set a unique id for the div.
 
 ```
     <div id="seamless-banner"></div>
     <div id="seamless-mre"></div>
+```
+
+#### Interstitial ads
+
+It's the same implementation as banner or mre ad. Place the following div right after the opening of body tag (`<body>`).
+
+```
+    <div id="seamless-interstitial"></div>
 ```
 
 ### 2. Define ad properties and options
@@ -36,22 +44,31 @@ Set this variable in a script tag right before the closing of the body tag (`</b
 
 ```
 <script type="text/javascript">
-    window.seamlessAds = [{
-        adUnitId: 'AD_UNIT_ID',
-        nodeId: 'seamless-banner',
-        adWidth: 320,
-        adHeight: 50,
-        keywords: '',
-        reload: true
-    },
-    {
-        adUnitId: 'AD_UNIT_ID',
-        nodeId: 'seamless-mre',
-        adWidth: 300,
-        adHeight: 250,
-        keywords: '',
-        reload: true
-    }];
+   window.seamlessAds = [{
+      adUnitId: 'AD_UNIT_ID',
+      nodeId: 'seamless-interstitial',
+      adWidth: 320,
+      adHeight: 480,
+      keywords: '',
+      reload: false,
+      interstitial: true
+   },
+   {
+      adUnitId: 'AD_UNIT_ID',
+      nodeId: 'seamless-banner',
+      adWidth: 320,
+      adHeight: 50,
+      keywords: '',
+      reload: true
+   },
+   {
+      adUnitId: 'AD_UNIT_ID',
+      nodeId: 'seamless-mre',
+      adWidth: 300,
+      adHeight: 250,
+      keywords: '',
+      reload: true
+   }];
 </script>
 ```
 
@@ -63,6 +80,7 @@ As you see there are predefined properties for each ad definition.
 - **adHeight** => width of the ad you want to display.
 - **keywords** => keywords are used for targeted ad delivery. it's optional and can be set to an empty string.
 - **reload** => information about whether this ad place should refresh itself in predefined periods. default value is true.
+- **interstitial** => information about whether this ad is of interstitial type. set to true only for an interstial ad definition. default value is false.
 
 
 ### 3. Copy and paste seamless.js initializer
@@ -72,18 +90,18 @@ You can simply copy and paste the following tag into your document, again right 
 
 ```
 <script type="text/javascript">
-    (function() {
-        [
-            'http://ad.mobilike.com/seamless/script/seamless.js'
-        ].forEach(function(src) {
-            var script = document.createElement('script');
-            script.src = src;
-            script.type = "text/javascript";
-            script.async = false;
-            var nodeBody = document.getElementsByTagName("body")[0];
-            nodeBody.appendChild(script);
-        });
-    })();
+   (function() {
+      [
+         'http://ad.mobilike.com/seamless/script/seamless.js'
+      ].forEach(function(src) {
+         var script = document.createElement('script');
+         script.src = src;
+         script.type = "text/javascript";
+         script.async = false;
+         var nodeBody = document.getElementsByTagName("body")[0];
+         nodeBody.appendChild(script);
+      });
+   })();
 </script>
 ```
 
@@ -91,36 +109,45 @@ That's it. Here is how the end part of your HTML document should look after foll
 
 ```
 <script type="text/javascript">
-    window.seamlessAds = [{
-        adUnitId: 'AD_UNIT_ID',
-        nodeId: 'seamless-banner',
-        adWidth: 320,
-        adHeight: 50,
-        keywords: '',
-        reload: true
-    },
-    {
-        adUnitId: 'AD_UNIT_ID',
-        nodeId: 'seamless-mre',
-        adWidth: 300,
-        adHeight: 250,
-        keywords: '',
-        reload: true
-    }];
+   window.seamlessAds = [{
+      adUnitId: 'AD_UNIT_ID',
+      nodeId: 'seamless-interstitial',
+      adWidth: 320,
+      adHeight: 480,
+      keywords: '',
+      reload: false,
+      interstitial: true
+   },
+   {
+      adUnitId: 'AD_UNIT_ID',
+      nodeId: 'seamless-banner',
+      adWidth: 320,
+      adHeight: 50,
+      keywords: '',
+      reload: true
+   },
+   {
+      adUnitId: 'AD_UNIT_ID',
+      nodeId: 'seamless-mre',
+      adWidth: 300,
+      adHeight: 250,
+      keywords: '',
+      reload: true
+   }];
 </script>
 <script type="text/javascript">
-    (function() {
-        [
-            'http://ad.mobilike.com/seamless/script/seamless.js'
-        ].forEach(function(src) {
-            var script = document.createElement('script');
-            script.src = src;
-            script.type = "text/javascript";
-            script.async = false;
-            var nodeBody = document.getElementsByTagName("body")[0];
-            nodeBody.appendChild(script);
-        });
-    })();
+   (function() {
+      [
+         'http://ad.mobilike.com/seamless/script/seamless.js'
+      ].forEach(function(src) {
+         var script = document.createElement('script');
+         script.src = src;
+         script.type = "text/javascript";
+         script.async = false;
+         var nodeBody = document.getElementsByTagName("body")[0];
+         nodeBody.appendChild(script);
+      });
+   })();
 </script>
 ```
 
@@ -132,11 +159,11 @@ seamlessJS automatically initializes the defined advertisements into `<div>` nod
 
 ```
 <script type="text/javascript">
-    window.seamlessConfig = {
-        debug: true,
-        debugLevel: 'trace',
-        autoInit: false
-    };
+   window.seamlessConfig = {
+      debug: true,
+      debugLevel: 'trace',
+      autoInit: false
+   };
 </script>
 ```
 
@@ -152,13 +179,13 @@ seamlessMW.initAd method needs a single argument, an object for ad definition wh
 
 ```
 <script type="text/javascript">
-    window.seamlessMW.initAd({
-        adUnitId: 'AD_UNIT_ID',
-        nodeId: 'seamless-banner',
-        adWidth: 320,
-        adHeight: 50,
-        keywords: '',
-        reload: true
+   window.seamlessMW.initAd({
+      adUnitId: 'AD_UNIT_ID',
+      nodeId: 'seamless-banner',
+      adWidth: 320,
+      adHeight: 50,
+      keywords: '',
+      reload: true
     });
 </script>
 ```
