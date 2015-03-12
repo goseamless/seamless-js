@@ -3,7 +3,7 @@ seamless.js (v1.0.0)
 
 About
 ----------------------------------
-seamless.js is the mobile web/app display advertising script of seamless. The script currently supports interstitial (320x480), banner (320x50), medium rectangle (300x250) and custom size display advertising formats.
+seamless.js is the mobile web/app display advertising script of seamless. The script currently supports interstitial (320x480), banner (320x50), medium rectangle (300x250) and custom size display advertising formats. You can find the demo page in [here](http://ad.mobilike.com/seamless/showcase).
 
 
 ## Table Of Contents
@@ -175,7 +175,7 @@ seamlessJS automatically initializes the defined advertisements into `<div>` nod
 
 In some cases you may not want to initialize every ad place at once on page load. One sample case for this would be when you have a single page web application, where your load/display cycles is custom to your design. In such a case you can init single ads explicitly whenever you want.
 To accomplish this, set autoInit property of window.seamlessConfig global variable to false. This will hold seamless.js back from looking for a window.seamlessAds variable on the page and also from initializing ads automatically on page load. That means you also won't need to set window.seamlessAds global variable on your page. Instead you can use the following method to initialize an ad.
-seamlessMW.initAd method needs a single argument, an object for ad definition which is the same object type described above. 
+seamlessMW.initAd method needs a single argument, an object for ad definition which is the same object type described above. You can find the demo page in [here](http://ad.mobilike.com/seamless/showcase/customInit.html).
 
 ```
 <script type="text/javascript">
@@ -195,7 +195,7 @@ seamlessMW.initAd method needs a single argument, an object for ad definition wh
 ### Google DFP
 
 To enable DFP support on your mobile web site/app, you also need to place the following script tag before closing of the head tag (`</head>`) in your document.
-seamless ad operations team will inform you if and when you need to have the following tag in your page.
+seamless ad operations team will inform you if and when you need to have the following tag in your page. You can find the demo page in [here](http://ad.mobilike.com/seamless/showcase/dfp.html).
 
 ```
 <script type='text/javascript'>
@@ -218,7 +218,7 @@ seamless ad operations team will inform you if and when you need to have the fol
 ### Google Adsense & AdX
 
 To enable Adsense and AdX support on your mobile web site/app, you need to use the following initializr tag in your document instead of the one given in above section "Copy and paste seamless.js initializer".
-seamless ad operations team will inform you if and when you need to have the following tag in your page.
+seamless ad operations team will inform you if and when you need to have the following tag in your page. You can find the demo page in [here](http://ad.mobilike.com/seamless/showcase/adsense.html).
 
 ```
 <script type='text/javascript'>
@@ -240,7 +240,7 @@ seamless ad operations team will inform you if and when you need to have the fol
 
 ### Criteo Retargeting
 
-To enable Criteo Retargeting Ads support on your mobile web site/app, first you need to provide ad definition objects with keywords set to Criteo variable. Suppose you want to enable Criteo ads for both your banner and medium rectangle ad places (following the example in integration steps section), you should have the following `window.seamlessAds` variable in your document. Notice that the only difference is the value of keywords property.
+To enable Criteo Retargeting Ads support on your mobile web site/app, first you need to provide ad definition objects with keywords set to Criteo variable. Suppose you want to enable Criteo ads for both your banner and medium rectangle ad places (following the example in integration steps section), you should have the following `window.seamlessAds` variable in your document. Notice that the only difference is the value of keywords property. You can find the demo page in [here](http://ad.mobilike.com/seamless/showcase/criteo.html).
 
 ```
 <script type="text/javascript">
