@@ -162,6 +162,7 @@ seamlessJS automatically initializes the defined advertisements into `<div>` nod
    window.seamlessConfig = {
       debug: true,
       debugLevel: 'trace',
+      enableDesktop: true,
       autoInit: false
    };
 </script>
@@ -169,6 +170,7 @@ seamlessJS automatically initializes the defined advertisements into `<div>` nod
 
 - **debug** => default value is false. If set to true, seamless.js will output debug information to the standard console.
 - **debugLevel** => may have two values, 'trace' or 'info'. default value is 'info'. 'info' level gives you standard information about the script operation, 'trace' on the other hand gives a much more detailed insight.
+- **enableDesktop** => default value is false. If set to true, you will be able to see in your desktop the advertisements that are targeted for mobile devices only.
 - **autoInit** => default value is true. seamless.js initializr tag automatically looks for windows.seamlessAds variable in the document and initializes ad display for all ad definitions in the variable. Don't set to this value to false, unless you're pursuiung a custom initialization.
 
 ## Custom initialization
