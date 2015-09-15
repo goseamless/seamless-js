@@ -1,10 +1,9 @@
-seamlessJS (v2.0.0)
+seamlessJS (v2.2.0)
 ==================================
 
 About
 ----------------------------------
 seamless.js is the mobile web/app display advertising script of seamless. The script currently supports interstitial (320x480), banner (320x50), medium rectangle (300x250) and custom size display advertising formats.
-You can find the demo page in [here](http://ad.mobilike.com/seamless/showcase).
 
 
 ## Table Of Contents
